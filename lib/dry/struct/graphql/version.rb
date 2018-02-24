@@ -1,6 +1,6 @@
 module Dry
-  module Struct
-    module Graphql
+  class Struct
+    module GraphQL
       VERSION = "0.1.0"
     end
   end

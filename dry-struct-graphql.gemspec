@@ -5,18 +5,17 @@ require "dry/struct/graphql/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "dry-struct-graphql"
-  spec.version       = Dry::Struct::Graphql::VERSION
+  spec.version       = Dry::Struct::GraphQL::VERSION
   spec.authors       = ["Gareth Andrew"]
   spec.email         = ["gingerhendrix@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Automated conversion between dry-structs and graphql types}
+  spec.homepage      = "http://github.com/gingerhendrix/dry-structs-graphql"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = 'https://rubygems.org'
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -28,6 +27,11 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency 'dry-types', '~> 0.12'
+  spec.add_dependency "dry-struct", "~> 0.4"
+  spec.add_dependency "dry-inflector"
+  spec.add_dependency "graphql", "~> 1.7"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
